@@ -1,0 +1,82 @@
+@charset "utf-8"; /* 文字コード宣言 */
+
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  /* heightやwidthにborderやpaddingの値を含める */
+}
+
+body {
+  font-family: "Dosis", sans-serif;
+  letter-spacing: 0.05em; /* 文字の間隔 */
+}
+
+main {
+  height: 100vh;
+  background-color: #333;
+  display: flex;
+  flex-direction: column; /* 要素を縦に並ばせる */
+  align-items: center; /* 横位置を中央にする */
+  justify-content: center; /* 縦位置を中央にする */
+}
+
+.textAnimation {
+  color: #fff;
+  font-size: 70px;
+}
+
+.textAnimation:not(:first-of-type) {
+  margin-top: 20px;
+}
+
+/* アニメーションの中身の定義  */
+/* @keyframes showTextFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes showTextFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+  100% {
+    opacity: 1;
+  }
+} */
+
+@keyframes showTextFromBottom {
+  0% {
+    transform: translateY(100%);
+    /* 文字の高さ分の高さ隠す */
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+.textAnimation span {
+  display: inline-block;
+  animation: showText 3s backwards;
+}
+
+.textAnimation > span {
+  overflow: hidden;
+}
+.textAnimation > span > span {
+  animation: showTextFromBottom 1s backwards;
+}
+
+/* .textAnimation span:nth-of-type(odd) {
+  animation: showTextFromBottom ease-out 3s backwards;
+}
+.textAnimation span:nth-of-type(even) {
+  animation: showTextFromTop ease-out 3s backwards;
+} */

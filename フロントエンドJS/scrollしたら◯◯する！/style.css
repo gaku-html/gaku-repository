@@ -1,0 +1,41 @@
+@charset "utf-8";
+main {
+  max-width: 1000px;
+  width: 100%;
+  background-color: #eee;
+  padding: 20px;
+  border-radius: 5px;
+  margin: 50px auto;
+  transition: 0.5s;
+}
+
+main.test {
+  background-color: blueviolet;
+  background-image: none;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  font-size: 20px;
+}
+
+li:not(:first-of-type) {
+  margin-top: 10px;
+}
+
+/* 最初以外という指定
+li:not(:first-of-type)  */
+
+#scrollValue {
+  padding: 20px;
+  border-radius: 5px;
+  position: fixed;
+  right: 10px;
+  bottom: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #aaa;
+}
